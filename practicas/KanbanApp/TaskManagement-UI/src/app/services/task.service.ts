@@ -7,7 +7,7 @@ import { CreateTaskRequest } from "../models/task.model";
 
 @Injectable({ providedIn: 'root' })
 export class TaskService {
-  private apiUrl = 'https://localhost:5282/api/tasks';
+  private apiUrl = 'http://localhost:5000/api/tasks';
 
 constructor(private client: HttpClient) {}
 
