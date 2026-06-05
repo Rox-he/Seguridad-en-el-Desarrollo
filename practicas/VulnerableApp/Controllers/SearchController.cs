@@ -19,7 +19,10 @@ namespace VulnerableApp.Controllers
             if (string.IsNullOrEmpty(search))
                 return View(new List<User>());
 
-            var users = _db.Users.Where(u => u.Username.Contains(search)).ToList();
+            var users = _db.Users
+                .Where(u => u.Username.Contains(search))
+                .ToList();
+
             return View(users);
         }
     }

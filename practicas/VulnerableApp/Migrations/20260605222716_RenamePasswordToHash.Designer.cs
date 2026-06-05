@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VulnerableApp.Data;
 
@@ -11,9 +12,11 @@ using VulnerableApp.Data;
 namespace VulnerableApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260605222716_RenamePasswordToHash")]
+    partial class RenamePasswordToHash
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,7 +62,7 @@ namespace VulnerableApp.Migrations
                             Balance = 1000m,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@test.com",
-                            PasswordHash = "$2a$11$5IJFbMBGrZCxhkXFOFaQqeUeABCDEFGHIJKLMNOPQRSTUVWXYZ1234",
+                            PasswordHash = "$2a$11$qBIZD/0Na4owG..vkJTUO.hJ4UzjqZR5J0JMOYFuFo5KqOPT1.EZ6",
                             Username = "admin"
                         },
                         new
@@ -68,7 +71,7 @@ namespace VulnerableApp.Migrations
                             Balance = 500m,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "user@test.com",
-                            PasswordHash = "$2a$11$5IJFbMBGrZCxhkXFOFaQqeUeABCDEFGHIJKLMNOPQRSTUVWXYZ5678",
+                            PasswordHash = "$2a$11$HIStAwH0Dispk9F7N3fz0.kix2pPrDntwTsy99DR3BIPrqaFKDXtO",
                             Username = "user1"
                         },
                         new
@@ -77,7 +80,7 @@ namespace VulnerableApp.Migrations
                             Balance = 750m,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "user2@test.com",
-                            PasswordHash = "$2a$11$5IJFbMBGrZCxhkXFOFaQqeUeABCDEFGHIJKLMNOPQRSTUVWXYZ9012",
+                            PasswordHash = "$2a$11$xaoaMlHDI1zjidFRkK6s4OJOynP0HKyJg4fHxoV01h3dhHDQpfxD2",
                             Username = "user2"
                         });
                 });
