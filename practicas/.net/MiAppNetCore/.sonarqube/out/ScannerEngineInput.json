@@ -1,0 +1,148 @@
+{
+  "scannerProperties": [
+    {
+      "key": "sonar.scanner.app",
+      "value": "ScannerMSBuild"
+    },
+    {
+      "key": "sonar.scanner.appVersion",
+      "value": "11.2.1"
+    },
+    {
+      "key": "sonar.scanner.bootstrapStartTime",
+      "value": "1781318815000"
+    },
+    {
+      "key": "sonar.projectKey",
+      "value": "MiAppNetCore"
+    },
+    {
+      "key": "sonar.working.directory",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\.sonarqube\\out\\.sonar"
+    },
+    {
+      "key": "sonar.projectBaseDir",
+      "value": "C:\\Users\\herre\\MiAppNetCore"
+    },
+    {
+      "key": "sonar.pullrequest.cache.basepath",
+      "value": "C:\\Users\\herre\\MiAppNetCore"
+    },
+    {
+      "key": "sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "sonar.modules",
+      "value": "EDE0D13F-7DEB-C899-B7F3-A102E40DBA77,3680B074-B0D6-C483-8C48-03FBF976E1C4"
+    },
+    {
+      "key": "EDE0D13F-7DEB-C899-B7F3-A102E40DBA77.sonar.projectKey",
+      "value": "MiAppNetCore:EDE0D13F-7DEB-C899-B7F3-A102E40DBA77"
+    },
+    {
+      "key": "EDE0D13F-7DEB-C899-B7F3-A102E40DBA77.sonar.projectName",
+      "value": "MiAppNetCore"
+    },
+    {
+      "key": "EDE0D13F-7DEB-C899-B7F3-A102E40DBA77.sonar.projectBaseDir",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore"
+    },
+    {
+      "key": "EDE0D13F-7DEB-C899-B7F3-A102E40DBA77.sonar.working.directory",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\.sonarqube\\out\\.sonar\\mod0"
+    },
+    {
+      "key": "EDE0D13F-7DEB-C899-B7F3-A102E40DBA77.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "EDE0D13F-7DEB-C899-B7F3-A102E40DBA77.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "EDE0D13F-7DEB-C899-B7F3-A102E40DBA77.sonar.sources",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\Program.cs,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\WeatherService.cs,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\obj\\Debug\\net10.0\\MiAppNetCore.GlobalUsings.g.cs,\"C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\obj\\Debug\\net10.0\\.NETCoreApp,Version=v10.0.AssemblyAttributes.cs\",C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\obj\\Debug\\net10.0\\MiAppNetCore.AssemblyInfo.cs,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\obj\\Debug\\net10.0\\MiAppNetCore.MvcApplicationPartsAssemblyInfo.cs,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\appsettings.Development.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\appsettings.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\MiAppNetCore.http,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\Properties\\launchSettings.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\obj\\MiAppNetCore.csproj.nuget.dgspec.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\obj\\project.assets.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\bin\\Debug\\net10.0\\appsettings.Development.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\bin\\Debug\\net10.0\\appsettings.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\bin\\Debug\\net10.0\\MiAppNetCore.deps.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\bin\\Debug\\net10.0\\MiAppNetCore.runtimeconfig.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\bin\\Debug\\net10.0\\MiAppNetCore.staticwebassets.endpoints.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\obj\\Debug\\net10.0\\rjsmcshtml.dswa.cache.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\obj\\Debug\\net10.0\\rjsmrazor.dswa.cache.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\obj\\Debug\\net10.0\\rpswa.dswa.cache.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\obj\\Debug\\net10.0\\staticwebassets.build.endpoints.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore\\obj\\Debug\\net10.0\\staticwebassets.build.json"
+    },
+    {
+      "key": "EDE0D13F-7DEB-C899-B7F3-A102E40DBA77.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\.sonarqube\\out\\0"
+    },
+    {
+      "key": "EDE0D13F-7DEB-C899-B7F3-A102E40DBA77.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\.sonarqube\\out\\0\\Issues.json"
+    },
+    {
+      "key": "EDE0D13F-7DEB-C899-B7F3-A102E40DBA77.sonar.cs.scanner.telemetry",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\.sonarqube\\out\\0\\Telemetry.json"
+    },
+    {
+      "key": "3680B074-B0D6-C483-8C48-03FBF976E1C4.sonar.projectKey",
+      "value": "MiAppNetCore:3680B074-B0D6-C483-8C48-03FBF976E1C4"
+    },
+    {
+      "key": "3680B074-B0D6-C483-8C48-03FBF976E1C4.sonar.projectName",
+      "value": "MiAppNetCore.Tests"
+    },
+    {
+      "key": "3680B074-B0D6-C483-8C48-03FBF976E1C4.sonar.projectBaseDir",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore.Tests"
+    },
+    {
+      "key": "3680B074-B0D6-C483-8C48-03FBF976E1C4.sonar.working.directory",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\.sonarqube\\out\\.sonar\\mod1"
+    },
+    {
+      "key": "3680B074-B0D6-C483-8C48-03FBF976E1C4.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "3680B074-B0D6-C483-8C48-03FBF976E1C4.sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "3680B074-B0D6-C483-8C48-03FBF976E1C4.sonar.tests",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore.Tests\\obj\\MiAppNetCore.Tests.csproj.nuget.dgspec.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore.Tests\\obj\\project.assets.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore.Tests\\bin\\Debug\\net10.0\\MiAppNetCore.Tests.deps.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore.Tests\\bin\\Debug\\net10.0\\MiAppNetCore.Tests.runtimeconfig.json,C:\\Users\\herre\\MiAppNetCore\\MiAppNetCore.Tests\\UnitTest1.cs"
+    },
+    {
+      "key": "3680B074-B0D6-C483-8C48-03FBF976E1C4.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\.sonarqube\\out\\1,C:\\Users\\herre\\MiAppNetCore\\.sonarqube\\out\\2"
+    },
+    {
+      "key": "3680B074-B0D6-C483-8C48-03FBF976E1C4.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\.sonarqube\\out\\1\\Issues.json,C:\\Users\\herre\\MiAppNetCore\\.sonarqube\\out\\2\\Issues.json"
+    },
+    {
+      "key": "3680B074-B0D6-C483-8C48-03FBF976E1C4.sonar.cs.scanner.telemetry",
+      "value": "C:\\Users\\herre\\MiAppNetCore\\.sonarqube\\out\\1\\Telemetry.json,C:\\Users\\herre\\MiAppNetCore\\.sonarqube\\out\\2\\Telemetry.json"
+    },
+    {
+      "key": "sonar.token",
+      "value": "***"
+    },
+    {
+      "key": "sonar.host.url",
+      "value": "http://localhost:9000"
+    },
+    {
+      "key": "sonar.cs.opencover.reportsPaths",
+      "value": "**/coverage.opencover.xml"
+    },
+    {
+      "key": "sonar.cs.vstest.reportsPaths",
+      "value": "**/*.trx"
+    },
+    {
+      "key": "sonar.exclusions",
+      "value": "**/coverage.opencover.xml"
+    },
+    {
+      "key": "sonar.visualstudio.enable",
+      "value": "false"
+    }
+  ]
+}

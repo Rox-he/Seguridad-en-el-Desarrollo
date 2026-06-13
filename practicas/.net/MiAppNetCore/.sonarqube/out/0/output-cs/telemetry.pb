@@ -1,0 +1,1 @@
+IR<C:\Users\herre\MiAppNetCore\MiAppNetCore\MiAppNetCore.csprojòCSharp14

@@ -1,0 +1,10 @@
+﻿C:\Users\herre\MiAppNetCore\MiAppNetCore\Program.cs
+C:\Users\herre\MiAppNetCore\MiAppNetCore\WeatherService.cs
+C:\Users\herre\MiAppNetCore\MiAppNetCore\obj\Debug\net10.0\MiAppNetCore.GlobalUsings.g.cs
+C:\Users\herre\MiAppNetCore\MiAppNetCore\obj\Debug\net10.0\.NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+C:\Users\herre\MiAppNetCore\MiAppNetCore\obj\Debug\net10.0\MiAppNetCore.AssemblyInfo.cs
+C:\Users\herre\MiAppNetCore\MiAppNetCore\obj\Debug\net10.0\MiAppNetCore.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\herre\MiAppNetCore\MiAppNetCore\appsettings.Development.json
+C:\Users\herre\MiAppNetCore\MiAppNetCore\appsettings.json
+C:\Users\herre\MiAppNetCore\MiAppNetCore\MiAppNetCore.http
+C:\Users\herre\MiAppNetCore\MiAppNetCore\Properties\launchSettings.json
