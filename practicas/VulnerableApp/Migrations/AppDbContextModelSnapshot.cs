@@ -44,6 +44,10 @@ namespace VulnerableApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -60,6 +64,7 @@ namespace VulnerableApp.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@test.com",
                             Password = "admin",
+                            PasswordHash = "$2b$11$.hn63SQVzdNRGjD8s7z2ku0TgnAOUcaKphgsmENA9UFGbrqcEXpaS",
                             Username = "admin"
                         },
                         new
@@ -69,6 +74,7 @@ namespace VulnerableApp.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "user@test.com",
                             Password = "123456",
+                            PasswordHash = "$2b$11$YhMOm3Kw9pWhdrBTGtQqfO6Y6DpGSkIsrP3g3yWqwO9rDWFrgjJsC",
                             Username = "user1"
                         },
                         new
@@ -78,6 +84,7 @@ namespace VulnerableApp.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "user2@test.com",
                             Password = "password",
+                            PasswordHash = "$2b$11$9EwQ4bIoyc5GOxKi6MZSueGbDRZFqtXBlfi9Y7gS1TOPB/xB5dV2u",
                             Username = "user2"
                         });
                 });
