@@ -82,5 +82,35 @@ namespace VulnerableApp.Controllers
                 throw;
             }
         }
+
+        // ---- Endpoints de prueba para SEGG-U2-P3G-3 / P3G-5 ----
+        // Permiten provocar, de forma repetible y controlada, los dos tipos de
+        // excepción que pide validar la práctica. No representan una
+        // funcionalidad real de negocio, solo un gancho de pruebas de logging.
+
+        /// <summary>Excepción CONTROLADA: se captura aquí mismo, se registra y
+        /// la petición responde 200 con normalidad (no llega al Exception Middleware).</summary>
+        [HttpGet("test/controlled-error")]
+        public IActionResult TestControlledError()
+        {
+            try
+            {
+                throw new InvalidOperationException("Excepción de prueba controlada (P3G-5)");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Excepción controlada capturada en Api.TestControlledError. IP:{IP}", ClientIp);
+                return Ok(new { status = "manejado", mensaje = "Excepción controlada registrada correctamente" });
+            }
+        }
+
+        /// <summary>Excepción NO CONTROLADA: no se captura en el controlador, por lo
+        /// que solo el Exception Middleware global la atrapa y responde 500.</summary>
+        [HttpGet("test/uncontrolled-error")]
+        public IActionResult TestUncontrolledError()
+        {
+            _logger.LogInformation("Inicio Api.TestUncontrolledError (se espera excepción no controlada). IP:{IP}", ClientIp);
+            throw new InvalidOperationException("Excepción de prueba NO controlada (P3G-5)");
+        }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VulnerableApp.Data;
 using VulnerableApp.Models;
+using VulnerableApp.Security;
 
 namespace VulnerableApp.Controllers
 {
@@ -29,6 +30,30 @@ namespace VulnerableApp.Controllers
                 HttpContext.Connection.RemoteIpAddress,
                 HttpContext.Request.Path,
                 search);
+
+            // Punto de prueba controlado para SEGG-U2-P3G-5: permite provocar una
+            // excepción CONTROLADA (capturada y registrada aquí mismo, sin propagarse
+            // al Exception Middleware) usando un valor de búsqueda reservado.
+            if (search == "__test_controlled_error__")
+            {
+                try
+                {
+                    throw new InvalidOperationException("Excepción de prueba controlada (P3G-5)");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Excepción controlada capturada en Search.Index (prueba P3G-5)");
+                    return View(new List<User>());
+                }
+            }
+
+            if (SecurityPatternDetector.LooksLikeSqlInjection(search))
+            {
+                _logger.LogWarning(
+                    "Posible intento de SQL Injection detectado en Search. Usuario:{User} IP:{IP} Valor:{Valor}",
+                    HttpContext.Session.GetString("User"), HttpContext.Connection.RemoteIpAddress,
+                    SecurityPatternDetector.SafeSnippet(search));
+            }
 
             try
             {

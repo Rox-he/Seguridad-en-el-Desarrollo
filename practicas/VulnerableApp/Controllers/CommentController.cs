@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using VulnerableApp.Security;
 
 namespace VulnerableApp.Controllers
 {
@@ -39,6 +40,13 @@ namespace VulnerableApp.Controllers
             _logger.LogInformation(
                 "Inicio Comment.AddComment. Usuario:{User} IP:{IP} LongitudComentario:{Longitud}",
                 CurrentUser, ClientIp, longitud);
+
+            if (SecurityPatternDetector.LooksLikeXss(comment))
+            {
+                _logger.LogWarning(
+                    "Posible intento de XSS detectado en Comment. Usuario:{User} IP:{IP} Fragmento:{Fragmento}",
+                    CurrentUser, ClientIp, SecurityPatternDetector.SafeSnippet(comment));
+            }
 
             try
             {
