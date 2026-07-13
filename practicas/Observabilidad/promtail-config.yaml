@@ -1,0 +1,33 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+  - job_name: vulnerableapp
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: vulnerableapp
+          app: VulnerableApp
+          __path__: /var/log/vulnerableapp/*.txt
+    pipeline_stages:
+      # Captura la línea completa en el campo "msg" para poder analizarla
+      - regex:
+          expression: '(?P<msg>.*)'
+
+      # Clasifica cada línea según su contenido y crea el campo "category"
+      - template:
+          source: category
+          template: >-
+            {{ if regexMatch "(?i)sql injection|intento de" .msg }}security{{ else if regexMatch "(?i)autenticaci|login|logout|usuario:" .msg }}audit{{ else }}general{{ end }}
+
+      # Promueve "category" de campo extraído a label real de Loki
+      - labels:
+          category:
