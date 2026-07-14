@@ -9,6 +9,7 @@ clients:
   - url: http://loki:3100/loki/api/v1/push
 
 scrape_configs:
+  # Job 1: logs generales de la aplicación (los que realmente genera Serilog hoy)
   - job_name: vulnerableapp
     static_configs:
       - targets:
@@ -16,7 +17,8 @@ scrape_configs:
         labels:
           job: vulnerableapp
           app: VulnerableApp
-          __path__: /var/log/vulnerableapp/*.txt
+          environment: dev
+          __path__: /var/log/vulnerableapp/log-*.txt
     pipeline_stages:
       # Captura la línea completa en el campo "msg" para poder analizarla
       - regex:
@@ -28,6 +30,28 @@ scrape_configs:
           template: >-
             {{ if regexMatch "(?i)sql injection|intento de" .msg }}security{{ else if regexMatch "(?i)autenticaci|login|logout|usuario:" .msg }}audit{{ else }}general{{ end }}
 
-      # Promueve "category" de campo extraído a label real de Loki
+      # Identifica a qué módulo de la app pertenece la línea
+      # (Auth -> authentication, Comment -> orders, para efectos de la práctica)
+      - template:
+          source: module
+          template: >-
+            {{ if regexMatch "(?i)auth\\.|autenticaci|login|logout" .msg }}authentication{{ else if regexMatch "(?i)comment\\." .msg }}orders{{ else }}general{{ end }}
+
+      # Promueve "category" y "module" de campos extraídos a labels reales de Loki
       - labels:
           category:
+          module:
+
+  # Job 2: segundo origen de logs (patrón dedicado a eventos de seguridad).
+  # Hoy no existen archivos con este patrón, pero la configuración demuestra
+  # que Promtail puede vigilar múltiples ubicaciones físicas de forma simultánea.
+  - job_name: vulnerableapp_security
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: vulnerableapp
+          app: VulnerableApp
+          category: security
+          environment: dev
+          __path__: /var/log/vulnerableapp/security-*.txt
