@@ -11,6 +11,9 @@ jobs:
   dast-zap:
     name: DAST — OWASP ZAP
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write   # la accion zaproxy/action-baseline crea un Issue con los resultados
 
     # SQL Server como "service container": el runner de GitHub Actions es
     # Linux, y la app usa (localdb) por defecto en appsettings.json, que
