@@ -20,6 +20,15 @@ builder.Services.AddSession();
 
 var app = builder.Build();
 
+// Aplica migraciones pendientes automaticamente al iniciar (crea la BD y
+// siembra los usuarios de prueba si no existen). Solo relevante para este
+// entorno de practica DAST; en un entorno productivo real esto se haria
+// como paso explicito de despliegue, no en el arranque de la app.
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<VulnerableApp.Data.AppDbContext>();
+    db.Database.Migrate();
+}
 // Orden del pipeline de middleware global (SEGG-U2-P3G-3):
 // 1) CorrelationId: primero de todos, para que exista un identificador único
 //    disponible en el LogContext durante el resto de la petición.
