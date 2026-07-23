@@ -1,0 +1,13 @@
+# .zap/rules.tsv
+# Formato: ID_REGLA	ACCION	COMENTARIO
+# ACCIONES: IGNORE (ignorar), WARN (solo advertir), FAIL (fallar el build)
+#
+# Estos 3 IDs corresponden a los hallazgos reales de nuestro baseline scan
+# (ver Fase 2.1): CSP ausente, Anti-clickjacking ausente, X-Content-Type-Options
+# ausente. Se marcan como WARN mientras se corrigen en el codigo (Fase 3/
+# verificacion post-fix); una vez corregidos, deberian dejar de aparecer y
+# se pueden quitar de este archivo o subir a FAIL para prevenir regresiones.
+10038	WARN	Content Security Policy (CSP) Header Not Set — pendiente de agregar middleware de headers de seguridad
+10020	WARN	Missing Anti-clickjacking Header (X-Frame-Options) — pendiente de agregar
+10021	WARN	X-Content-Type-Options Header Missing — pendiente de agregar
+10202	WARN	Absence of Anti-CSRF Tokens — pendiente de agregar @Html.AntiForgeryToken() y [ValidateAntiForgeryToken]
