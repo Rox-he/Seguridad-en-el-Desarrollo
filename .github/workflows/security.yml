@@ -53,7 +53,7 @@ jobs:
           ConnectionStrings__DefaultConnection: "Server=localhost,1433;Database=VulnerableDb;User Id=sa;Password=Pentest!2026Segg;TrustServerCertificate=true;"
         run: |
           dotnet build .
-          dotnet run --no-build &
+          dotnet run --no-build --no-launch-profile --urls http://+:8080 &
           sleep 15
 
       - name: Verify app is responding
