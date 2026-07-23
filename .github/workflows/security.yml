@@ -63,6 +63,15 @@ jobs:
         run: curl -sf http://localhost:8080/ || (echo "La app no respondio a tiempo" && exit 1)
 
       - name: ZAP Baseline Scan
+        # continue-on-error: la propia accion zaproxy/action-baseline tiene un
+        # bug conocido y ampliamente reportado (ver github.com/actions/upload-artifact
+        # issues relacionados) donde su subida INTERNA de artifact falla con
+        # "Create Artifact Container failed" por una API de GitHub en proceso
+        # de descontinuacion. El scan en si SI se completa correctamente
+        # (se ve en el log: "Process completed successfully" y se crea el
+        # Issue con los hallazgos). No dependemos de ese artifact interno
+        # porque subimos el reporte nosotros mismos en el siguiente paso.
+        continue-on-error: true
         uses: zaproxy/action-baseline@v0.12.0
         with:
           target: 'http://localhost:8080'
